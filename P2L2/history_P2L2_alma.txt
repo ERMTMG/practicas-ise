@@ -1,0 +1,56 @@
+  115  ip a
+  116  sudo nmcli add type ethernet ifname enp0s8 ipv4.addresses 192.168.56.110/24 ipv4.gateway 192.168.56.1 ipv4.method manual
+  117  sudo nmcli conn add type ethernet ifname enp0s8 ipv4.addresses 192.168.56.110/24 ipv4.gateway 192.168.56.1 ipv4.method manual
+  118  sudo systemctl restart NetworkManager
+  124  clear
+  125  ssh-keygen 
+  126  ssh-copy-id -i ~/.ssh/id_ed25519.pub -o Port=22022 deb@192.168.56.105
+  127  ssh deb@192.168.56.105
+  128  ssh deb@192.168.56.105 -p 22022
+  129  clear
+  130  sudo systemctl status sshd
+  131  sudo nano /etc/ssh/sshd_config
+  132  clear
+  133  sudo dnf install epel-release
+  134  sudo dnf install fail2ban
+  135  sudo systemctl start fail2ban
+  136  sudo systemctl status fail2ban
+  137  sudo fail2ban-client status 
+  138  sudo cp -a /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+  139  sudo nano /etc/fail2ban/jail.local 
+  140  clear
+  141  sudo systemctl restart fail2ban
+  142  sudo systemctl status fail2ban
+  143  sudo fail2ban-client status
+  144  sudo fail2ban-client status sshd
+  145  sudo fail2ban-client set sshd unbanip 192.168.56.105
+  146  echo $?
+  147  clear
+  148  sudo dnf install tmux
+  149  clear
+  150  tmux new -s sesh1
+  151* tmux ne
+  152  tmux new -s sesh1
+  153  attach -t sesh1
+  154  tmux attach -t sesh1
+  155  tmux new -s sesh1
+  156  tmux attach -t sesh1
+  157  sudo dnf install httpd php mariadb mariadb-server php-mysqlnd  -y
+  158  sudo systemctl status httpd
+  159  sudo systemctl start httpd
+  160  sudo systemctl status httpd
+  161  clear
+  162  sudo firewall-cmd --add-port=80/tcp --permanent 
+  163  sudo firewall-cmd --reload
+  164  clear
+  165  sudo systemctl status mariadb
+  166  sudo systemctl start mariadb
+  167  sudo systemctl status mariadb
+  168  sudo mysql_secure_installation
+  169  mysql -u root -p
+  170  clear
+  171  sudo nano /var/www/index.php
+  172  mysql -u root -p
+  173  clear
+  174  sudo cp /var/www/index.php /var/www/html/index.php
+  175  history >> history_P2L3.txt

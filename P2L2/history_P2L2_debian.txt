@@ -1,0 +1,24 @@
+   83  2025-10-30 16:05:27 sudo apt install netplan.io
+   84  2025-10-30 16:06:27 sudo apt install ufw
+   85  2025-10-30 16:07:07 sudo systemctl enable --now systemd-networkd
+   86  2025-10-30 16:07:29 sudo systemctl disable --now networking
+   87  2025-10-30 16:07:50 sudo nano /etc/netplan/00-installer-config.yaml
+   88  2025-10-30 16:08:18 sudo ufw status
+   89  2025-10-30 16:08:22 sudo ufw enable
+   90  2025-10-30 16:08:44 sudo ufw allow 22022
+   91  2025-10-30 16:18:40 sudo nano /etc/netplan/00-installer-config.yaml
+   92  2025-10-30 16:19:52 sudo netplan apply
+   93  2025-10-30 16:19:59 ip a
+   94  2025-10-30 16:21:14 ping 192.168.56.110
+   95  2025-10-30 16:21:29 ssh-keygen 
+   96  2025-10-30 16:24:20 ssh-copy-id -i ./.ssh/id_ed25519.pub -o Port=22 deb@192.168.56.110
+   97  2025-10-30 16:24:41 ssh 192.168.56.110
+   98  2025-10-30 16:24:45 ssh deb@192.168.56.110
+   99  2025-10-30 16:29:33 ssh-keygen 
+  100  2025-10-30 16:29:39 ssh-copy-id -i ./.ssh/id_ed25519.pub -o Port=22 deb@192.168.56.110
+  101  2025-10-30 16:30:00 clear
+  102  2025-10-30 16:30:48 sudo nano /etc/ssh/sshd_config
+  103  2025-10-30 16:32:55 sudo systemctl restart sshd
+  104  2025-10-30 16:41:54 ssh hacker@192.168.56.110
+  105  2025-10-30 16:43:24 ssh deb@192.168.56.110
+  106  2025-10-30 17:12:32 history >> hist_P2L3.txt
