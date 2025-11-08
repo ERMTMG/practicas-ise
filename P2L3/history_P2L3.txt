@@ -1,0 +1,95 @@
+  110  2025-11-06 17:17:38 sudo apt install git -y
+  111  2025-11-08 11:19:22 git --version
+  112  2025-11-08 11:20:22 git init mi_repo
+  113  2025-11-08 11:20:44 cd mi_repo/
+  114  2025-11-08 11:20:48 ls -la
+  115  2025-11-08 11:20:51 ls .git
+  116  2025-11-08 11:22:29 git config user.name "Eduardo RH"
+  117  2025-11-08 11:22:44 git config user.email "eduardorh@correo.ugr.es"
+  118  2025-11-08 11:22:56 git config core.editor "nano"
+  119  2025-11-08 11:23:22 touch libro.txt
+  120  2025-11-08 11:23:32 ls
+  121  2025-11-08 11:23:37 git status
+  122  2025-11-08 11:24:19 git add libro.txt 
+  123  2025-11-08 11:24:23 git status 
+  124  2025-11-08 11:25:12 git commit -m "creación del archivo \`libro.txt\`"
+  125  2025-11-08 11:25:37 git status 
+  126  2025-11-08 11:25:49 git log
+  127  2025-11-08 11:25:56 git log --graph
+  128  2025-11-08 11:26:02 clear
+  129  2025-11-08 11:26:51 nano super_important_passwords
+  130  2025-11-08 11:27:09 git status
+  131  2025-11-08 11:27:31 nano .gitignore
+  132  2025-11-08 11:27:45 ls -a
+  133  2025-11-08 11:27:54 git status
+  134  2025-11-08 11:28:27 nano .gitignore
+  135  2025-11-08 11:28:36 git status
+  136  2025-11-08 11:29:06 nano libro.txt 
+  137  2025-11-08 11:29:18 git diff
+  138  2025-11-08 11:29:30 git add libro.txt 
+  139  2025-11-08 11:29:56 nano libro.txt 
+  140  2025-11-08 11:30:08 git diff libro.txt
+  141  2025-11-08 11:30:49 git diff HEAD
+  142  2025-11-08 11:31:07 fit diff --staged
+  143  2025-11-08 11:31:14 git diff --staged
+  144  2025-11-08 11:31:35 git add libro.txt 
+  145  2025-11-08 11:31:37 git diff
+  146  2025-11-08 11:32:30 git commit -m "añadidos título y subtítulo"
+  147  2025-11-08 11:32:47 git log --graph
+  148  2025-11-08 11:33:03 clear
+  149  2025-11-08 11:33:12 git checkout -b cap1
+  150  2025-11-08 11:33:20 git branch
+  151  2025-11-08 11:33:45 nano libro.txt 
+  152  2025-11-08 11:34:11 git add libro.txt 
+  153  2025-11-08 11:34:26 git commit -m "empezado capítulo 1"
+  154  2025-11-08 11:34:39 nano libro.txt 
+  155  2025-11-08 11:34:52 git add .
+  156  2025-11-08 11:35:11 git commit -m "continuación capítulo 1"
+  157  2025-11-08 11:35:32 git log --graph 
+  158  2025-11-08 11:35:48 git checkout master 
+  159  2025-11-08 11:36:05 nano libro.txt 
+  160  2025-11-08 11:36:22 git add libro.txt 
+  161  2025-11-08 11:36:35 git commit -m "mejora al título"
+  162  2025-11-08 11:36:49 git checkout cap1 
+  163  2025-11-08 11:37:26 git log --graph
+  164  2025-11-08 11:38:30 git checkout master 
+  165  2025-11-08 11:38:36 git merge cap1 
+  166  2025-11-08 11:39:00 cat libro.txt 
+  167  2025-11-08 11:39:04 git status 
+  168  2025-11-08 11:39:34 git log --graph
+  169  2025-11-08 11:40:01 git checkout -b cap2
+  170  2025-11-08 11:40:07 nano libro.txt 
+  171  2025-11-08 11:40:29 git add libro.txt 
+  172  2025-11-08 11:40:42 git commit -m "empezado capítulo 2"
+  173  2025-11-08 11:40:47 nano libro.txt 
+  174  2025-11-08 11:41:00 git add libro.txt 
+  175  2025-11-08 11:41:37 git commit -m "continuación capítulo 2"
+  176  2025-11-08 11:41:56 git checkout 
+  177  2025-11-08 11:42:01 git checkout master 
+  178  2025-11-08 11:42:07 nano libro.txt 
+  179  2025-11-08 11:42:14 git add .
+  180  2025-11-08 11:42:47 git commit -m "mejora al subtítulo"
+  181  2025-11-08 11:43:04 git checkout cap2
+  182  2025-11-08 11:43:23 git rebase master 
+  183  2025-11-08 11:43:33 git branch 
+  184  2025-11-08 11:43:37 git checkout master 
+  185  2025-11-08 11:43:46 git merge cap2
+  186  2025-11-08 11:43:57 cat libro.txt 
+  187  2025-11-08 11:44:07 git log --graph 
+  188  2025-11-08 11:48:10 git restore --source=017ec9040d069a0ca0621049c005eff66298d511 libro.txt 
+  189  2025-11-08 11:48:27 cat libro.txt 
+  190  2025-11-08 11:48:40 git status 
+  191  2025-11-08 11:48:53 git diff libro.txt
+  192  2025-11-08 11:49:14 git restore libro.txt 
+  193  2025-11-08 11:49:18 cat libro.txt 
+  194  2025-11-08 11:50:25 git revert 2a099c671d417f35c9a549d274a7d1ec04b1d478
+  195  2025-11-08 11:51:07 nano libro.txt 
+  196  2025-11-08 11:51:45 git add libro.txt 
+  197  2025-11-08 11:51:53 git revert --continue 
+  198  2025-11-08 11:52:36 git log --graph 
+  199  2025-11-08 11:54:19 nano libro.txt 
+  200  2025-11-08 11:54:54 git reset --hard 017ec9040d069a0ca0621049c005eff66298d511
+  201  2025-11-08 11:55:01 git log --graph 
+  202  2025-11-08 11:55:04 cat libro.txt 
+  203  2025-11-08 11:55:50 git branch -D cap2
+  204  2025-11-08 11:56:04 history > ~/hist_P2L3.txt 
