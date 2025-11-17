@@ -1,0 +1,15 @@
+#### P3L1 #### 
+# monitorizacion raid:
+sudo mdadm --query /dev/md0
+watch -n 1 sudo mdadm --query /dev/md0 # ejecuta el comando cada segundo.
+mdadm --detail /dev/md0
+cat /proc/mdstat # informacion desde archivo
+
+#mdadm también puede similar fallos de software en el raid.
+
+sudo mdadm --manage --set-faulty /dev/md0 /dev/sdc1
+# podemos ver y comprobamos que las herramientas de monitorizacion dicen que está fallando
+sudo mdadm -r /dev/md0 /dev/sdc1 #quitamos el disco
+
+sudo mdadm -a /dev/md0 /dev/sdc1 # volvemos a añadirlo
+watch -n 1 cat /proc/mdstat # ejecutamos inmediatamente y vemos que está progresando la recuperación (sincronización)

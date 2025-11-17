@@ -1,0 +1,16 @@
+Para monitorizar el servidor de Alma en primer lugar, se han seguido los siguientes pasos:
+- Ir a Configuration → Hosts → Create Host en la parte superior derecha de la pantalla
+- Rellenar la información del nuevo host, poniendo entre otros la IP a 192.168.56.110
+
+Una vez se ha configurado para monitorizar el servidor, añadimos para que vigile 
+los servicios de HTTP y SSH. Para HTTP:
+- Ir a Configuration → Hosts
+- Seleccionar el nombre puesto para el servidor, en este caso "Servidor Alma"
+- Ir a Web Scenarios → Create Web Scenario (parte superior derecha)
+- Añadir un nuevo paso, requeriendo un código de status 200 (OK) y con la URL http://192.168.56.110/
+- Guardar el paso y el escenario
+Y para SSH:
+- De nuevo en Configuration → Hosts → Servidor Alma, ir esta vez a Items → Create Item
+- Poner en la configuración del item el tipo a "Simple check" y el tipo de información como numérico sin signo
+- Poner en la clave del item net.tcp.service[ssh,192.168.56.110] (nota: El puerto de SSH en el servidor es 22 ya que no se pudo poner a 22022)
+Este item retornará 1 si el servicio SSH está disponible.
