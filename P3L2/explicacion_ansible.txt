@@ -1,0 +1,16 @@
+Lo primero que hemos hecho es instalar ansible y un paquete auxiliar, todo en la máquina host:
+    sudo apt install ansible sshpass
+Una vez instalado, creamos el archivo de configuración de hosts:
+    sudo mkdir /etc/ansible/
+    sudo touch /etc/ansible/hosts
+    sudo nvim /etc/ansible/hosts
+    
+En el archivo, ponemos las siguientes líneas:
+    192.168.56.105 ansible_ssh_user=deb ansible_ssh_pass=practicas,ise ansible_ssh_port=22022
+    192.168.56.110 ansible_ssh_user=deb ansible_ssh_pass=practicas,ise ansible_become_pass=practicas,ise 
+
+y podemos directamente ejecutar el comando de ping con el módulo ansible.builtin.ping
+
+Para el playbook, usamos `become: yes` para poder ejecutar los comandos con permisos de superusuario. La
+versión de httpd la comprobamos con `ansible.builtin.yum`, esperando `state: latest`, y el estado del servicio
+lo comprobamos con `ansible.builtin.service`, esperando `state: started`.
